@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Загрузка сервера</title>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    body {
+        background: url("Frame 2147223748.png") no-repeat center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.35);
+        z-index: 1;
+    }
+
+    .mapname {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(14px, 1.8vw, 22px); /* Уменьшенный размер текста */
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0,0,0,0.9); /* Более темная тень */
+    margin-top: 10vh;
+    color: #8C8C8C; /* Более темный серый цвет */
+    animation: gentle-pulse 5s infinite ease-in-out; /* Увеличенная длительность анимации */
+}
+
+@keyframes gentle-pulse {
+    0%, 100% {
+        color: #6E6E6E; /* Темно-серый */
+        opacity: 0.9;
+    }
+    50% {
+        color: #9A9A9A; /* Средне-серый */
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="overlay"></div>
+<div class="mapname" id="mapname">Загрузка карты...</div>
+
+<script>
+    function GameDetails(servername, serverurl, mapname, maxplayers, steamid, gamemode) {
+        document.getElementById("mapname").innerText = "Карта: " + mapname;
+    }
+</script>
+
+</body>
+</html>
